@@ -3,7 +3,7 @@
 // ==========================================
 const CAMERA_SETTINGS = {
     // Initial camera rotation (in radians)  
-    initialRotationY: Math.PI * 0.15,  // Horizontal rotation (0 = front, PI/2 = side, PI = back)
+    initialRotationY: Math.PI * 0.2,  // Horizontal rotation (0 = front, PI/2 = side, PI = back)
     initialRotationX: Math.PI * 0.3,   // Vertical rotation (0 = level, PI/4 = looking down)
     
     // Camera distance multiplier
@@ -13,7 +13,7 @@ const CAMERA_SETTINGS = {
     heightOffset: 0,  // Positive = higher, Negative = lower
     
     // Rotation limits (in degrees for easier adjustment)
-    maxUpRotation: 55,    // Maximum degrees to look up
+    maxUpRotation: 45,    // Maximum degrees to look up
     maxDownRotation: 45,  // Maximum degrees to look down
     
     // Smoothness controls
