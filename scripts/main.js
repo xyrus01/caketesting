@@ -3,7 +3,7 @@
 // ==========================================
 const CAMERA_SETTINGS = {
     // Initial camera rotation (in radians)  
-    initialRotationY: Math.PI * 0.2,  // Horizontal rotation (0 = front, PI/2 = side, PI = back)
+    initialRotationY: Math.PI * 0.1,  // Horizontal rotation (0 = front, PI/2 = side, PI = back)
     initialRotationX: Math.PI * 0.3,   // Vertical rotation (0 = level, PI/4 = looking down)
     
     // Camera distance multiplier
@@ -13,22 +13,46 @@ const CAMERA_SETTINGS = {
     heightOffset: 0,  // Positive = higher, Negative = lower
     
     // Rotation limits (in degrees for easier adjustment)
-    maxUpRotation: 45,    // Maximum degrees to look up
+    maxUpRotation: 80,    // Maximum degrees to look up
     maxDownRotation: 45,  // Maximum degrees to look down
     
     // Smoothness controls
-    rotationSpeed: 0.01,  // Mouse sensitivity (lower = slower/smoother)
+    rotationSpeed: 0.005,  // Mouse sensitivity (lower = slower/smoother)
     dampening: 0.1         // Animation smoothness (lower = smoother, higher = more responsive)
 };
 
 const SCENE_SETTINGS = {
-    backgroundColor: 0x222222  // 0x000000 = black, 0xffffff = white, 0x222222 = dark gray
+    backgroundColor: 0x000000  // 0x000000 = black, 0xffffff = white, 0x222222 = dark gray
 };
 
 // Mobile detection and optimization
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 if (isMobile) {
     CAMERA_SETTINGS.rotationSpeed *= 1.2; // Slightly more sensitive on mobile
+}
+
+// Create debug display for mobile
+const debugDiv = document.createElement('div');
+debugDiv.style.position = 'fixed';
+debugDiv.style.top = '10px';
+debugDiv.style.left = '10px';
+debugDiv.style.background = 'rgba(0,0,0,0.8)';
+debugDiv.style.color = 'white';
+debugDiv.style.padding = '10px';
+debugDiv.style.fontSize = '12px';
+debugDiv.style.zIndex = '1000';
+debugDiv.style.maxWidth = '300px';
+debugDiv.innerHTML = `Mobile: ${isMobile}<br>Touch support loading...`;
+document.body.appendChild(debugDiv);
+
+function debugLog(message) {
+    console.log(message);
+    debugDiv.innerHTML += '<br>' + message;
+    // Keep only last 5 messages
+    const lines = debugDiv.innerHTML.split('<br>');
+    if (lines.length > 6) {
+        debugDiv.innerHTML = lines.slice(-6).join('<br>');
+    }
 }
 // ==========================================
 
