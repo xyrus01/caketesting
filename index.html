@@ -2,70 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
 
         <style>
-            @font-face {
-              font-family: 'Koulen';
-              src: url('fonts/Koulen-Regular.ttf');
-              font-weight: normal;
-              font-style: normal;
-            }
 
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 20px;
-                background-color: #222;
-                color: white;
-                /* Mobile optimizations */
-                touch-action: none;
-                -webkit-touch-callout: none;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                overflow-x: hidden;
-            }
-
-            h1{
-                text-align: center;
-                font-family: Koulen, Arial, sans-serif;
-                color:mediumpurple;
-            }
-
-            .container{
-                display:flex;
-                flex-direction: row;
-                column-gap: 10px;
-                justify-content: center;
-            }
-
-            #box1{
-                background-color:black;
-                width: 60%;
-                height: 400px;
-                /* Mobile touch optimizations */
-                touch-action: none;
-                -webkit-touch-callout: none;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                position: relative;
-                overflow: hidden;
-            }
-
-            /* Mobile responsive */
-            @media (max-width: 768px) {
-                #box1 {
-                    width: 95%;
-                    height: 300px;
-                }
-                body {
-                    padding: 10px;
-                }
-            }
         </style>
 
         <title>Cake 3D</title>
@@ -77,7 +18,22 @@
             <div class="container">
                 <div id="box1"></div>
             </div>
+
+            <div class="scroll">
+                <div id="scroll1">
+                    scroll
+                </div>
+                <div id="scroll2">
+                    scroll
+                </div>
+                <div id="scroll3">
+                    scroll
+                </div>
+            </div>
+
         </main>
+
+
 
         <!-- Three.js Core Library -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
